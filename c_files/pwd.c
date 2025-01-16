@@ -6,13 +6,13 @@
 /*   By: gvalente <gvalente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 22:40:34 by gvalente          #+#    #+#             */
-/*   Updated: 2025/01/14 23:27:44 by gvalente         ###   ########.fr       */
+/*   Updated: 2025/01/16 19:43:29 by gvalente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header.h"
 
-void    pwd(t_data *d)
+void	pwd(t_data *d)
 {
-    printf("%s\n", d->cwd);
+	printf("%s\n", d->cwd);
 }
