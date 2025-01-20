@@ -6,12 +6,17 @@
 /*   By: gvalente <gvalente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 22:51:46 by gvalente          #+#    #+#             */
-/*   Updated: 2025/01/15 00:14:36 by gvalente         ###   ########.fr       */
+/*   Updated: 2025/01/20 17:31:38 by gvalente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header.h"
 
+/**
+ * @note 
+ * @attention 
+ * @todo 
+ */
 void	execute_prompt(t_data *d, char *prompt)
 {
 	if (!ft_strncmp(prompt, "clear", 4))
@@ -24,6 +29,8 @@ void	execute_prompt(t_data *d, char *prompt)
 		cd(d, prompt);
 	if (!ft_strncmp(prompt, "pwd", 3))
 		pwd(d);
+	if (!ft_strncmp(prompt, "create", 3))
+		create_file(d, "hello", "/coucou.txt");
 }
 
 int	get_terminal_prompt(t_data *d)

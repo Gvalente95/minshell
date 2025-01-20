@@ -6,7 +6,7 @@
 /*   By: gvalente <gvalente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 18:04:55 by gvalente          #+#    #+#             */
-/*   Updated: 2025/01/15 00:16:09 by gvalente         ###   ########.fr       */
+/*   Updated: 2025/01/20 17:23:13 by gvalente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ typedef struct s_data
 	char		*cwd;
 	char		*doc_wd;
 	char		*start_wd;
+	int			debug_mode;
 	t_status	status;
 }	t_data;
 
@@ -71,10 +72,11 @@ int		man(t_data *d, char *prompt_line);
 int		ls(t_data *d);
 
 //		utils.c
-void	handle_sigint(int sig);
+void	setup_signal(void);
 char 	*ft_remove_prefix(char *str, char *prefix);
 char	*truncate_at_end(char *str, const char cut_letter);
 int		update_cwd(t_data *data);
 char	*get_next_line(int fd);
+int		create_file(t_data *d, char *content, char *file_name);
 
 #endif

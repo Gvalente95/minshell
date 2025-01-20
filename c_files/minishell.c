@@ -6,7 +6,7 @@
 /*   By: gvalente <gvalente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 18:04:46 by gvalente          #+#    #+#             */
-/*   Updated: 2025/01/16 19:44:02 by gvalente         ###   ########.fr       */
+/*   Updated: 2025/01/20 17:18:44 by gvalente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	main()
 {
 	t_data	data;
 
-	signal(SIGINT, handle_sigint);
+	setup_signal();
 	write_animated_txt(START_ANIM_TEXT, 30000, 100000);
 	init_data(&data);
 	while (data.status == running)

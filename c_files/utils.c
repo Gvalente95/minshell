@@ -6,17 +6,11 @@
 /*   By: gvalente <gvalente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 22:50:03 by gvalente          #+#    #+#             */
-/*   Updated: 2025/01/16 19:43:49 by gvalente         ###   ########.fr       */
+/*   Updated: 2025/01/20 17:29:09 by gvalente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header.h"
-
-void	handle_sigint(int sig)
-{
-	(void)sig;
-	printf("\nMinishell$ ");
-}
 
 int	write_animated_txt(char *txt_to_display, int interval, int exit_wait)
 {
@@ -80,4 +74,19 @@ char	*truncate_at_end(char *str, char cut_letter)
 		trunc_str[i] = str[i];
 	trunc_str[i] = '\0';
 	return (trunc_str);
+}
+
+int	create_file(t_data *d, char *content, char *file_name)
+{
+	char	*full_path;
+	int		fd;
+
+	printf("CREATING FILE\n");
+	full_path = ft_strjoin(d->cwd, file_name);
+	printf("%s\n", full_path);
+	fd = open(full_path, O_CREAT, O_TRUNC, 0644);
+	if (fd == -1)
+		return (0);
+	write(fd, content, ft_strlen(content));
+	return (1);
 }
